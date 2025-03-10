@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jhzv69fmu-nodejs-gitops
+  description: This is GitOps manifest for jhzv69fmu-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=jhzv69fmu-nodejs
+    backstage.io/kubernetes-id: jhzv69fmu-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jhzv69fmu-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jhzv69fmu-nodejs
